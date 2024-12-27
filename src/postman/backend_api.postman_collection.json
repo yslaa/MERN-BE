@@ -1,0 +1,1431 @@
+{
+	"info": {
+		"_postman_id": "5241facc-0736-40f3-aa0f-10037b59e0e7",
+		"name": "API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19567688"
+	},
+	"item": [
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "GET ALL USERS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users",
+							"host": [
+								"{{URI}}{{V1}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USERS DELETED",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users/deleted",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE USER",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}users/:id",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6667f181ec84cc0e792ac1e4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN ADMIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"crislhan.fabila@tup.edu.ph\",\r\n    \"password\": \"1234567\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users/login",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGIN CUSTOMER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"crslhn@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users/login",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LOGOUT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admingab@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users/logout",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE ADMIN",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "crislhan",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "fabila",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "crislhan.fabila@tup.edu.ph\n",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7289c-8734-4be0-948d-56cf5717cef4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users",
+							"host": [
+								"{{URI}}{{V1}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE CUSTOMER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "customer",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "crislhan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "crslhn@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Customer",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7289c-8734-4be0-948d-56cf5717cef4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users",
+							"host": [
+								"{{URI}}{{V1}}users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT USER",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "firstName",
+									"value": "crislhan",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "fabila",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "crislhan.fabila@tup.edu.ph",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7289c-8734-4be0-948d-56cf5717cef4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6662d7278daf9a70fec58ff6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE USER",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}users/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6684f9a013019821f5081402"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RESTORE USER",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}users/restore/:id",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"restore",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6684f9a013019821f5081402"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FORCE DELETE USER",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}users/forceDelete/:id",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"forceDelete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6684f9a013019821f5081402"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change User Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"newPassword\": \"12345678\",\n  \"confirmPassword\": \"12345678\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users/changePassword/:id",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"changePassword",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66a89b35acd720df01012c26"
+								}
+							]
+						},
+						"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot User Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"crislhan.fabila@tup.edu.ph\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users/emailOTP",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"emailOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset User Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"verificationCode\": \"809261\",\r\n    \"newPassword\": \"12345678\",\r\n    \"confirmPassword\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}users/resetPassword",
+							"host": [
+								"{{URI}}{{V1}}users"
+							],
+							"path": [
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PRODUCT",
+			"item": [
+				{
+					"name": "GET ALL PRODUCTS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}products",
+							"host": [
+								"{{URI}}{{V1}}products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL PRODUCTS DELETED",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}products/deleted",
+							"host": [
+								"{{URI}}{{V1}}products"
+							],
+							"path": [
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE PRODUCT",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}products/:id",
+							"host": [
+								"{{URI}}{{V1}}products"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE PRODUCT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "testing2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1500",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7289c-8734-4be0-948d-56cf5717cef4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}products",
+							"host": [
+								"{{URI}}{{V1}}products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT PRODUCT",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test2",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "testing2",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1550",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1ef7289c-8734-4be0-948d-56cf5717cef4"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}products/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}products"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "676b9c0d9e983550514d4979"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE PRODUCT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}products/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}products"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "676b9c0d9e983550514d4979"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RESTORE PRODUCT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}products/restore/:id",
+							"host": [
+								"{{URI}}{{V1}}products"
+							],
+							"path": [
+								"restore",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67690b5f53bf120605ccd9a2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FORCE DELETE PRODUCT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}products/forceDelete/:id",
+							"host": [
+								"{{URI}}{{V1}}products"
+							],
+							"path": [
+								"forceDelete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67690b5f53bf120605ccd9a2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "INVENTORY",
+			"item": [
+				{
+					"name": "GET ALL INVENTORIES",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}inventories",
+							"host": [
+								"{{URI}}{{V1}}inventories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL INVENTORIES DELETED",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}inventories/deleted",
+							"host": [
+								"{{URI}}{{V1}}inventories"
+							],
+							"path": [
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE INVENTORY",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}inventories/:id",
+							"host": [
+								"{{URI}}{{V1}}inventories"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE INVENTORY",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": \"676b9c0d9e983550514d4979\",\r\n    \"quantity\": 999,\r\n    \"warehouseLocation\": \"Metropolitan Manila\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}inventories",
+							"host": [
+								"{{URI}}{{V1}}inventories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT INVENTORY",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 999,\r\n    \"warehouseLocation\": \"Metropolitan Manila\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}inventories/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}inventories"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66b4625eb7f0fa9052f55b6f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE INVENTORY",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}inventories/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}inventories"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67690e5ed4f8d97ceb9632d7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RESTORE INVENTORY",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}inventories/restore/:id",
+							"host": [
+								"{{URI}}{{V1}}inventories"
+							],
+							"path": [
+								"restore",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67690b5f53bf120605ccd9a2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FORCE DELETE INVENTORY",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}inventories/forceDelete/:id",
+							"host": [
+								"{{URI}}{{V1}}inventories"
+							],
+							"path": [
+								"forceDelete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67690b5f53bf120605ccd9a2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TRANSACTION",
+			"item": [
+				{
+					"name": "GET ALL TRANSACTIONS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL TRANSACTIONS DELETED",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions/deleted",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							],
+							"path": [
+								"deleted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET SINGLE TRANSACTION",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions/:id",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE TRANSACTION CASH",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"product\": [\r\n    { \"id\": \"676b9c039e983550514d4976\", \"quantity\": 3 },\r\n    { \"id\": \"676b9c0d9e983550514d4979\", \"quantity\": 5 }\r\n  ],\r\n  \"payment\": \"Maya\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE TRANSACTION MAYA",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"product\": [\r\n    { \"id\": \"676b9c039e983550514d4976\", \"quantity\": 3 },\r\n    { \"id\": \"676b9c0d9e983550514d4979\", \"quantity\": 5 }\r\n  ],\r\n  \"payment\": \"Maya\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EDIT TRANSACTION",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": \"Completed\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions/edit/:id",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							],
+							"path": [
+								"edit",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66b4625eb7f0fa9052f55b6f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE TRANSACTION",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions/delete/:id",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							],
+							"path": [
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67690e5ed4f8d97ceb9632d7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RESTORE TRANSACTION",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions/restore/:id",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							],
+							"path": [
+								"restore",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67690b5f53bf120605ccd9a2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FORCE DELETE TRANSACTION",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{Bearer}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URI}}{{V1}}transactions/forceDelete/:id",
+							"host": [
+								"{{URI}}{{V1}}transactions"
+							],
+							"path": [
+								"forceDelete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "67690b5f53bf120605ccd9a2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Bearer",
+			"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NmI5YmNjOWU5ODM1NTA1MTRkNDk2ZSIsInJvbGUiOiJDdXN0b21lciIsImlhdCI6MTczNTIzMjEzMCwiZXhwIjoxNzM1ODM2OTMwfQ.-RrZEF8n9zebH87ZZaqVNwe-99ZiD3puELLO-fk26Eg",
+			"type": "string"
+		}
+	]
+}
